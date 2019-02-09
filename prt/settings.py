@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['192.168.1.10']
 # Application definition
 
 INSTALLED_APPS = [
+    'hpux.apps.HpuxConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -75,8 +76,12 @@ WSGI_APPLICATION = 'prt.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgres',
-        'NAME': 'prtdb',
+        'ENGINE'    : 'django.db.backends.postgresql',
+        'NAME'      : 'prtdb',
+        'USER'      : 'prtadmin',
+        'PASSWORD'  : 'prtadmin',
+        'HOST'      : 'localhost',
+        'PORT'      : '5432',
     }
 }
 
