@@ -1,0 +1,24 @@
+install postgres and 
+create DB - prtdb 
+create user id  - prtadmin
+create password - prtadmin
+port number =- 5432
+
+
+
+
+
+
+sudo apt-get update
+sudo apt-get install postgresql postgresql-contrib
+
+adduser postgres_user
+sudo su - postgres
+psql
+
+CREATE USER prtadmin WITH PASSWORD 'prtadmin';
+CREATE DATABASE prtdb OWNER prtadmin;
+
+\q
+
+
