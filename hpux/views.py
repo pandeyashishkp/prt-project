@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import HpuxForm
+from .models import Hpux
 
 
 def home(request):
@@ -10,11 +11,17 @@ def hpux(request):
     return render(request, 'hpux/hpux.html')
 
 
-def hpux_create_view(request):
-    form = HpuxForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-    context = {
-        'form': form,
-    }
-    return render(request, "hpux/hpux_create.html", context)
+def hpux_register(request):
+    return render(request, "hpux/register.html")
+
+
+def hpux_register_data(request):
+    servername = request.POST['servername']
+    change_number = request.POST['change_number']
+    email = request.POST['email']
+    date = request.POST['date']
+    patch_bundle = request.POST['patch_bundle']
+    update = Hpux(servername=servername, change_number=change_number,
+                  email=email, date=date, patch_bundle=patch_bundle)
+    update.save()
+    return render(request, "hpux/register.html")

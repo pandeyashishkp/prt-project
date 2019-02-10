@@ -1,0 +1,15 @@
+{% extends "hpux/base.html" %}
+{% block content %}
+{% load static %}
+<br><br><br>
+<div class="registerform">
+    <br><br>
+<h1 align="center">HPUX-REGISTER</h1>
+<form method="POST"> {% csrf_token %}
+    {{ form.as_p}}
+    <div class="form=group">
+        <button class="btn btn-outline-info" type="submit">Save</button>
+    </div>
+</form>
+</div>
+{% endblock content %}

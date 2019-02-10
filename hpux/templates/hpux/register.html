@@ -1,0 +1,23 @@
+{% extends "hpux/base.html" %}
+{% block content %}
+{% load static %}
+<br><br><br>
+<div class="registerform">
+
+<form method="POST" action="hpux_register_data"> {% csrf_token %}
+    <h1 align="center">HPUX-REGISTER</h1>
+    <input type="text" name="servername" placeholder="servername" maxlength="100" size="50"><br>
+    <input type="text" name="change_number" placeholder="change_number" maxlength="100" size="50"><br>
+    <input type="email" name="email" placeholder="email" maxlength="100" size="50"><br>
+    <select name="patch_bundle" id="Patch-Bundle" style="width: 470px;height: 28px; "><br>
+        <option value="11iV3-2019">11iV3-2019</option>
+        <option value="11iV3-2018">11iv3-2018</option>
+        <option value="11iV3-2017">11iv3-2017</option>
+        <option value="11iV2-2016">11iv2-2016</option>
+        <option value="11iV1-2016">11iv1-2016</option>
+    </select><br>
+    <input name='date' type="date" size="50" placeholder={{ form.date }}</input>
+    <input type='submit' value='Save' size="100" />
+</form>
+</div>
+{% endblock content %}

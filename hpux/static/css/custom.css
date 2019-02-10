@@ -13,3 +13,11 @@
     background-color: #e9ecef;
     border-radius: .3rem;
 }
+form {
+margin: 0 auto;
+width:400px;
+}
+input, select {
+    margin-bottom : 25px;
+    padding-right : 10px;
+}
