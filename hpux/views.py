@@ -31,3 +31,16 @@ def hpux_register_data(request):
                       email=email, date=date, patch_bundle=patch_bundle)
         update.save()
         return render(request, "hpux/register.html")
+
+
+def delete(request):
+    return render(request, "hpux/delete.html")
+
+
+def hpux_delete_data(request):
+    servername = request.POST['servername']
+    change_number = request.POST['change_number']
+    d = Hpux.objects.filter(servername=servername, change_number=change_number)
+    print(d)
+    d.delete()
+    return render(request, "hpux/delete.html")
