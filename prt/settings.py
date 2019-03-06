@@ -25,12 +25,13 @@ SECRET_KEY = 'u7kfov5n%4!&uxkoux*)z#q0)tikc9#-!ijrch3ume&djo5q6z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.10']
+ALLOWED_HOSTS = ['ip','localhost','127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'sslserver',
     'hpux.apps.HpuxConfig',
     'django.contrib.admin',
     'django.contrib.auth',

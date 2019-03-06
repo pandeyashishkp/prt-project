@@ -1,0 +1,3 @@
+python manage.py runsslserver --certificate /path/to/certificate.crt --key /path/to/key.key
+
+https://github.com/teddziuba/django-sslserver

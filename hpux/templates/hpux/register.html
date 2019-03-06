@@ -1,11 +1,13 @@
 {% extends "hpux/base.html" %}
 {% block content %}
 {% load static %}
-<br><br><br>
+<header class="jumbotron my-4">
+    <br><br>
+  <h1 class="display-4" align="center">PRT - HPUX-REGISTER</h1>
+</header>
 <div class="registerform">
 
 <form method="POST" action="hpux_register_data"> {% csrf_token %}
-    <h1 align="center">HPUX-REGISTER</h1>
     <input type="text" name="servername" placeholder="servername" maxlength="100" size="50"><br>
     <input type="text" name="change_number" placeholder="change_number" maxlength="100" size="50"><br>
     <input type="email" name="email" placeholder="email" maxlength="100" size="50"><br>
@@ -20,4 +22,5 @@
     <input type='submit' value='Save' size="100" />
 </form>
 </div>
+
 {% endblock content %}

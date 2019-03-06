@@ -1,13 +1,17 @@
 {% extends "hpux/base.html" %}
 {% block content %}
 {% load static %}
-<br><br><br>
+<header class="jumbotron my-4">
+    <br><br>
+  <h1 class="display-4" align="center">PRT - HPUX-DELETE</h1>
+</header>
+
 <div class="deleteform">
 <form method="POST" action="hpux_delete_data"> {% csrf_token %}
-    <h1 align="center">HPUX-DELETE</h1>
     <input type="text" name="servername" placeholder="servername" maxlength="100" size="50"><br>
     <input type="text" name="change_number" placeholder="change_number" maxlength="100" size="50"><br>
     <input type='submit' value='Delete' size="100" />
 </form>
 </div>
+
 {% endblock content %}
